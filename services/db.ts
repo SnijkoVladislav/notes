@@ -24,6 +24,10 @@ async function get(id: string) {
   return (await dbPromise).get("notes", id);
 }
 
+async function del(id: string) {
+  return (await dbPromise).delete("notes", id);
+}
+
 async function add(data: { name: string; text: string }) {
   return (await dbPromise).add("notes", {
     ...data,
@@ -35,4 +39,4 @@ async function getAll() {
   return (await dbPromise).getAll("notes");
 }
 
-export { get, add, getAll };
+export { get, add, del, getAll };
