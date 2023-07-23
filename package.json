@@ -9,10 +9,12 @@
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.8.0",
+    "@types/markdown-it": "^12.2.3",
     "nuxt": "^3.0.0",
     "nuxt-icon": "^0.4.2"
   },
   "dependencies": {
-    "idb": "^7.1.1"
+    "idb": "^7.1.1",
+    "markdown-it": "^13.0.1"
   }
 }
