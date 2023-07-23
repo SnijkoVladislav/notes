@@ -6,20 +6,20 @@ export const useNotes = () => {
 
   async function addNote(data: { name: string; text: string }) {
     await add(data);
-    notes.value = await getAll();
+    notes.value = (await getAll()) as Note[];
   }
 
-  async function delNote(id: string) {
+  async function delNote(id: number) {
     await del(id);
-    notes.value = await getAll();
+    notes.value = (await getAll()) as Note[];
   }
 
-  async function getNote(id: string) {
+  async function getNote(id: number) {
     return await get(id);
   }
 
   onMounted(async () => {
-    notes.value = await getAll();
+    notes.value = (await getAll()) as Note[];
   });
 
   return { addNote, getNote, notes, delNote };

@@ -20,11 +20,13 @@ const dbPromise = openDB<DB>("db", 1, {
   },
 });
 
-async function get(id: string) {
+async function get(id: number) {
+  // @ts-ignore idb woned string but work with number
   return (await dbPromise).get("notes", id);
 }
 
-async function del(id: string) {
+async function del(id: number) {
+  // @ts-ignore idb woned string but work with number
   return (await dbPromise).delete("notes", id);
 }
 
