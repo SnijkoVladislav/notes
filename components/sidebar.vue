@@ -56,7 +56,9 @@ function addNewNote() {
 
 function deleteNote() {
   if(!activeNodeId.value) return
-  delNote(activeNodeId.value)
-  router.replace({ query: {} })
+  if(window.confirm("Do you really want to delete?")) {
+    delNote(activeNodeId.value)
+    router.replace({ query: {} })
+  }
 }
 </script>
