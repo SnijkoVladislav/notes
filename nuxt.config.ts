@@ -4,6 +4,6 @@ export default {
     preset: "vercel-edge",
   },
   routeRules: {
-    "/": { ssr: false },
+    "/**": { ssr: false },
   },
 };
